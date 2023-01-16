@@ -1,0 +1,40 @@
+{
+  "request_types": {
+    "1": {
+      "Get IT help": "3",
+      "Request a new account": "5",
+      "Emailed request": "7",
+      "New mobile device": "8",
+      "Report a system problem": "10",
+      "Report broken hardware": "12",
+      "Request a change": "13",
+      "Investigate a problem": "15",
+      "Create a post-incident review": "17",
+      "Fix an account problem": "18",
+      "Get a guest wifi account": "20",
+      "Set up VPN to the office": "21",
+      "Request admin access": "23",
+      "Onboard new employees": "25",
+      "Request new software": "27",
+      "Request new hardware": "29"
+    },
+    "2": {
+      "Get IT help": "1",
+      "Request a new account": "2",
+      "Emailed request": "4",
+      "New mobile device": "6",
+      "Report a system problem": "9",
+      "Report broken hardware": "11",
+      "Request a change": "14",
+      "Investigate a problem": "16",
+      "Create a post-incident review": "19",
+      "Fix an account problem": "22",
+      "Get a guest wifi account": "24",
+      "Set up VPN to the office": "26",
+      "Request admin access": "28",
+      "Onboard new employees": "30",
+      "Request new software": "31",
+      "Request new hardware": "32"
+    }
+  }
+}
