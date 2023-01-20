@@ -14,7 +14,7 @@ def jira_auth_and_headers():
            url: (String) the base URL for the instance
 
     """
-    auth = requests.auth.HTTPBasicAuth(os.environ.get("JIRA_EMAIL_K"), os.environ.get("API_KEY_K"))
+    auth = requests.auth.HTTPBasicAuth(os.environ.get("JIRA_EMAIL"), os.environ.get("API_KEY"))
 
     headers = {
         "Accept": "application/json",
@@ -22,6 +22,6 @@ def jira_auth_and_headers():
         "X-ExperimentalApi": "opt-in"
     }
 
-    url = os.environ.get("BASE_URL_K")
+    url = os.environ.get("BASE_URL")
 
     return auth, headers, url

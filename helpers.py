@@ -69,12 +69,12 @@ def get_all_request_types():
 
 if __name__ == "__main__":
 
-    issue = get_all_servicedesks()
-    print(json.dumps(issue, indent=4))
-
-    # issue_key = "ST-4"
-    # issue = get_servicedesk_issue(issue_key)
+    # issue = get_all_servicedesks()
     # print(json.dumps(issue, indent=4))
+
+    issue_key = "DR-2"
+    issue = get_servicedesk_issue(issue_key)
+    print(json.dumps(issue, indent=4))
 
     # field_configurations = get_all_request_types()
     # print(json.dumps(field_configurations, indent=4))

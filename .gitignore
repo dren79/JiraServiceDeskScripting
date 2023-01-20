@@ -134,6 +134,6 @@ dmypy.json
 .idea
 .idea/*
 
-servicedesk/output/*
-!servicedesk/output/.gitkeep
-
+get_to_kow_your_instance/output/*
+!get_to_kow_your_instance/output/.gitkeep
+create_multiple_servicedesk_issues_from_csv/.DS_Store

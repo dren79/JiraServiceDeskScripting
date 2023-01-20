@@ -1,6 +1,7 @@
 import requests
 import json
 from auth_and_headers import jira_auth_and_headers
+from get_to_kow_your_instance.get_to_know_your_servicedesk import get_my_instance_details
 
 
 def create_issue(service_desk_id_, request_type_id_, summary_, description_):
@@ -41,9 +42,14 @@ def create_issue(service_desk_id_, request_type_id_, summary_, description_):
 
 
 if __name__ == "__main__":
-    serviceDeskId = "2"
-    requestTypeId = "22"
-    summary = "DR Request JSD help via REST"
+    # converting human-readable to the id's service desk needs
+    my_instance_servicedesks = get_my_instance_details()
+    service_desk_name = "DR_SD"
+    request_type = "Set up VPN to the office"
+    serviceDeskId = my_instance_servicedesks.get("service_desks", {}).get(service_desk_name, None)
+    requestTypeId = my_instance_servicedesks.get("request_types", {}).get(serviceDeskId, {}).get(request_type, None)
+    # adding the text attributes
+    summary = "DR human-readable to codes"
     description = "I need a new *mouse* for my Mac"
     res = create_issue(serviceDeskId, requestTypeId, summary, description)
     if res.status_code == 400:
@@ -51,5 +57,5 @@ if __name__ == "__main__":
         print(json_res['errorMessages'])
     else:
         json_res = json.loads(res.text)
-        issue_key = json_res['issueId']
+        issue_key = json_res['issueKey']
         print(f"New Issue Key: {issue_key}")

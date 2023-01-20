@@ -3,7 +3,7 @@ import json
 from helpers import get_all_request_types, get_all_servicedesks
 
 
-def main():
+def get_my_instance_details():
     my_instance = {}
 
     service_desks = get_all_servicedesks()
@@ -26,6 +26,6 @@ def main():
 
 
 if __name__ == "__main__":
-    my_instance_details = main()
+    my_instance_details = get_my_instance_details()
     with open(f'output/my_service_instance_details.json', 'w') as outfile:
         json.dump(my_instance_details, outfile)
