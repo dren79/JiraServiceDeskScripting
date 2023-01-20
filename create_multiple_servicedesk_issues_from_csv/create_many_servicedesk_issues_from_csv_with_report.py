@@ -53,7 +53,11 @@ def create_servicedesk_issues(csv_file_, init_name_):
                 request_type_id = my_instance_servicedesks.get("request_types", {}).get(service_desk_id, {}).get(row[2],
                                                                                                                  None)
                 raise_on_behalf_of_id = assignable_users.get(row[0], None)
-                res = create_issue(service_desk_id, request_type_id, row[3], row[4], raise_on_behalf_of_id)
+                res = create_issue(service_desk_id_=service_desk_id,
+                                   request_type_id_=request_type_id,
+                                   summary_=row[3],
+                                   description_=row[4],
+                                   raise_on_behalf_of_=raise_on_behalf_of_id)
                 json_res = json.loads(res.text)
                 issue_key = json_res['issueKey']
                 init_['issues'][f'{issue_key}'] = {
